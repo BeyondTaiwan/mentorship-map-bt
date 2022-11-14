@@ -9,7 +9,6 @@ class SimpleMentorSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id','first_name', 'last_name', 'major','grad_year','email', 'linkedin','intro', 'essay_editing')
 
 class MentorSerializer(serializers.HyperlinkedModelSerializer):
-    high_school = HighSchoolSerializer(required = False)
     uni = UniSerializer(required = False)
 
     class Meta:

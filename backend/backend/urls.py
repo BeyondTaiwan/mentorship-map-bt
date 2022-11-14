@@ -21,15 +21,20 @@ from user.views import UsersViewSet, UserLoginAPI
 from mentor.views import MentorsViewSet, TableViewSet
 from school.views import UniViewSet
 
+from user.views import ApiEndpoint
+
+
 router = routers.DefaultRouter()
 router.register(r'users', UsersViewSet)
-router.register(r'mentors', MentorsViewSet)
+router.register(r'mentors', MentorsViewSet, basename="test")
 router.register(r'schools',UniViewSet)
 router.register(r'tables',TableViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('user/login/', UserLoginAPI.as_view()),
+    path('api/hello', ApiEndpoint.as_view()),
     ]
