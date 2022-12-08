@@ -20,6 +20,9 @@ from rest_framework import routers
 from user.views import UsersViewSet, UserLoginAPI
 from mentor.views import MentorsViewSet, TableViewSet
 from school.views import UniViewSet
+from django.views.generic import TemplateView
+from django.contrib.auth.views import LogoutView
+
 
 from user.views import ApiEndpoint
 
@@ -31,7 +34,11 @@ router.register(r'schools',UniViewSet)
 router.register(r'tables',TableViewSet)
 
 
+
 urlpatterns = [
+    path('', TemplateView.as_view(template_name="index.html")),
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),

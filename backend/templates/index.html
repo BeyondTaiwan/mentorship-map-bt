@@ -1,0 +1,11 @@
+{% load socialaccount %}
+<html>
+<body>
+<h1>My Google OAuth Project </h1>
+{% if user.is_authenticated %}
+  <p>Welcome, You are logged in as {{ user.username }}</p>
+{% else %}
+  <a href="http://127.0.0.1:8000/accounts/google/login/">Login With Google</a>
+{% endif %}
+</body>
+</html>

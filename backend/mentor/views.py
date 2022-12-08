@@ -17,20 +17,25 @@ from rest_framework import permissions
 
 
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
+from oauth2_provider.views.generic import ProtectedResourceView
+from oauth2_provider.views.application import ApplicationDetail
 
 
-
+# class MentorsViewSet(ProtectedResourceView, viewsets.ModelViewSet):
 class MentorsViewSet(viewsets.ModelViewSet):
     queryset = Mentor.objects.all().order_by('id')
     serializer_class = MentorSerializer
-    permission_classes = [permissions.IsAuthenticated, TokenHasScope]
-    required_scopes = []
+    # permission_classes = [permissions.IsAuthenticated,TokenHasScope]
+    # permission_classes = [TokenHasScope]
+    # required_scopes = []
 
 
 class TableViewSet(viewsets.ModelViewSet):
     queryset = Mentor.objects.all().order_by('id')
     serializer_class = TableSerializer
-    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
+    # permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
+    # permission_classes = [TokenHasReadWriteScope]
+
 
 
     def list(self, request):
@@ -40,4 +45,3 @@ class TableViewSet(viewsets.ModelViewSet):
         final = {"mentors":serializer.data}
 
         return Response(final)
-
