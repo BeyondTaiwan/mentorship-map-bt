@@ -59,6 +59,7 @@ export default class Login extends React.Component{
 
                     {(this.state.accessCodeError ? 
                         <div>
+                            <p className="login-box-header login-box-header--sign-up">Sign up with access code</p>
                             {(!this.state.accessCodeEntered ?
                                 <input className="login-box-input" id="access-code-input" type="text" placeholder="Enter access code" onSubmit={this.validateAccessToken}/>
                                 :
