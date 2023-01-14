@@ -1,3 +1,5 @@
+/* Legacy Page */
+
 .right{
     right: 0;
     background-color: #FFFBD9;
@@ -32,3 +34,108 @@
     overflow-x: hidden;
     padding-top: 20px;
 } 
+
+
+/* New Layout */
+
+.page {
+    background-color: #FFFBD9;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-image {
+    width: 8vw;
+    margin-bottom: 12px;
+}
+
+.welcome-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: rgba(90, 89, 87, 1);
+}
+
+.login-box {
+    background-color: white;
+    padding: 32px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-box-header {
+    color: grey;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.login-box-header--sign-up {
+    padding-bottom: 0;
+}
+
+.login-box-google-button {
+    width: 20vw;
+}
+
+.login-box-guidance-text {
+    color: darkgrey;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+}
+
+.login-box-input {
+    width: 20vw;
+    border: solid 2px rgba(90, 89, 87, 1);
+    border-radius: 4px;
+    padding: 6px;
+    background-color: rgba(90, 89, 87, 0.05);
+}
+
+.login-box-input--error {
+    border: solid 2px rgba(255, 0, 0, 0.7);
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.login-box-input:focus {
+    -webkit-appearance: none;
+    outline: none;
+    border: solid 2px rgba(224, 148, 65, 1);
+    background-color: rgba(224, 148, 65, 0.05);
+    transition: border ease-in 0.1s;
+}
+
+.login-box-input-hint {
+    margin: 0;
+    margin-top: 4px;
+    color: rgba(255, 0, 0, 0.7);
+    font-size: 12px;
+    margin-bottom: -24px;
+}
+
+.login-box-submit {
+    width: 20vw;
+    margin-top: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: none;
+    background-color: rgba(231, 174, 85);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
