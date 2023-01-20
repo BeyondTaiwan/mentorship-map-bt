@@ -36,8 +36,6 @@ class TableViewSet(viewsets.ModelViewSet):
     # permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
     # permission_classes = [TokenHasReadWriteScope]
 
-
-
     def list(self, request):
         queryset = Mentor.objects.all().order_by('id')
         serializer = TableSerializer(queryset, many=True)

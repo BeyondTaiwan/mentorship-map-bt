@@ -36,3 +36,4 @@ class UniViewSet(viewsets.ModelViewSet):
 
         return Response(final)
 
+
